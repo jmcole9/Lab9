@@ -180,7 +180,6 @@
     
     errorBtns[11].addEventListener("click", () => {
       console.time();
-      console.log("hello");
     });
 
     errorBtns[12].addEventListener("click", () => {
@@ -196,7 +195,7 @@
     });
 
     // Step 3
-    errorBtns[13].addEventListener("click", () => {
+    errorBtns[14].addEventListener("click", () => {
       try {
         let number = "a";
         if (number.isNaN()) {
@@ -205,6 +204,10 @@
         numbers();
       } catch (err) {
         throw err;
+        // Step 5
+        if (window.onerror) {
+        console.log(window.onerror);
+    }
       } finally {
         console.log("try/catch/finally demo")
       }
@@ -218,17 +221,12 @@
       }
     }
 
-    if (firstNum.isNaN) {
+    if (firstNum.isNaN()) {
       throw new invalidNumberError("Input is not a number");
     }
 
-    if (secondNum.isNaN) {
+    if (secondNum.isNaN()) {
       throw new invalidNumberError("Input is not a number");
-    }
-
-    // Step 5
-    if (window.onerror) {
-      console.log(window.onerror);
     }
   </script>
 </body>
