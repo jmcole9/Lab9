@@ -103,6 +103,23 @@
       let output = document.querySelector('output');
       let firstNum = document.querySelector('#first-num').value;
       let secondNum = document.querySelector('#second-num').value;
+
+      // Step 4
+      class InvalidNumberError extends Error {
+        constructor(message) {
+          super(message); // (1)
+          this.name = "InvalidNumberError"; // (2)
+        }
+      }
+      
+      if (firstNum.isNaN()) {
+      throw new invalidNumberError("Input is not a number");
+      }
+
+      if (secondNum.isNaN()) {
+        throw new invalidNumberError("Input is not a number");
+      }
+
       let operator = document.querySelector('#operator').value;
       output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
     });
@@ -198,7 +215,7 @@
     errorBtns[14].addEventListener("click", () => {
       try {
         let number = "a";
-        if (number.isNaN()) {
+        if (isNaN(number)) {
           throw new SyntaxError("Number is not a number");
         }
         numbers();
@@ -212,22 +229,6 @@
         console.log("try/catch/finally demo")
       }
     });
-
-    // Step 4
-    class InvalidNumberError extends Error {
-      constructor(message) {
-        super(message); // (1)
-        this.name = "InvalidNumberError"; // (2)
-      }
-    }
-
-    if (firstNum.isNaN()) {
-      throw new invalidNumberError("Input is not a number");
-    }
-
-    if (secondNum.isNaN()) {
-      throw new invalidNumberError("Input is not a number");
-    }
   </script>
 </body>
 
