@@ -114,11 +114,17 @@
       }
       
       if (isNaN(firstNum)) {
-      throw new InvalidNumberError("Input is not a number");
+        if (window.onerror) {
+          console.log(onerror);
+        }
+        // throw new InvalidNumberError("Input is not a number");
       }
 
       if (isNaN(secondNum)) {
-        throw new InvalidNumberError("Input is not a number");
+        if (window.onerror) {
+          console.log(onerror);
+        }
+        // throw new InvalidNumberError("Input is not a number");
       }
 
       let operator = document.querySelector('#operator').value;
