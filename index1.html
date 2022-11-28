@@ -113,11 +113,11 @@
       }
       
       if (isNaN(firstNum)) {
-      throw new invalidNumberError("Input is not a number");
+      throw new InvalidNumberError("Input is not a number");
       }
 
       if (isNaN(secondNum)) {
-        throw new invalidNumberError("Input is not a number");
+        throw new InvalidNumberError("Input is not a number");
       }
 
       let operator = document.querySelector('#operator').value;
@@ -128,9 +128,6 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
-
-           
-
 
     // Step 2
     errorBtns[0].addEventListener("click", () => {
