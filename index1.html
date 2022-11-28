@@ -226,6 +226,16 @@
         console.log("try/catch/finally demo")
       }
     });
+
+    mistakes();
+    window.onerror = function(message, url, linenumber) {
+      if (window.XMLHttpRequest) {
+        let xhr = new XMLHttpRequest();
+        let log = linenumber + message + url;
+        xhr.send(log);
+      }
+      return true;
+    }
   </script>
 </body>
 
