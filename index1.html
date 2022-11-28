@@ -212,14 +212,6 @@
     // Step 3
     errorBtns[14].addEventListener("click", () => {
       try {
-        let number = "a";
-        if (isNaN(number)) {
-          throw new SyntaxError("Number is not a number");
-          if (window.onerror) {
-            // Step 5
-            console.log(window.onerror);
-          }
-        }
         numbers();
       } catch (err) {
         throw err;
