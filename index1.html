@@ -105,6 +105,7 @@
       let secondNum = document.querySelector('#second-num').value;
 
       // Step 4
+      // Throws an error if a number is not typed into the input
       class InvalidNumberError extends Error {
         constructor(message) {
           super(message); // (1)
@@ -201,9 +202,9 @@
     });
 
     errorBtns[13].addEventListener("click", () => {
-      const layerOne = () => { second(); };
-      const layerTwo = () => { third(); };
-      const layerThree = () => { fourth(); };
+      const layerOne = () => { layerTwo(); };
+      const layerTwo = () => { layerThree(); };
+      const layerThree = () => { layerFour(); };
       const layerFour = () => { console.trace(); };
       layerOne();
     });
@@ -214,14 +215,14 @@
         let number = "a";
         if (isNaN(number)) {
           throw new SyntaxError("Number is not a number");
+          if (window.onerror) {
+            // Step 5
+            console.log(window.onerror);
+          }
         }
         numbers();
       } catch (err) {
         throw err;
-        // Step 5
-        if (window.onerror) {
-        console.log(window.onerror);
-    }
       } finally {
         console.log("try/catch/finally demo")
       }
